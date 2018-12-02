@@ -25,6 +25,8 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
@@ -34,11 +36,29 @@ import org.lineageos.internal.util.PackageManagerUtils;
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
 
+    private VibratorStrengthPreference mVibratorStrength;
+    private Preference mKcalPref;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.button_panel);
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
+        if (mVibratorStrength != null) {
+            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        }
+
+        mKcalPref = findPreference("kcal");
+        mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+             @Override
+             public boolean onPreferenceClick(Preference preference) {
+                 Intent intent = new Intent(getActivity(), DisplayCalibration.class);
+                 startActivity(intent);
+                 return true;
+             }
+        });
     }
 
     @Override
@@ -113,6 +133,14 @@ public class ButtonSettingsFragment extends PreferenceFragment
                         Constants.sNodeDependencyMap.get(pref)[1]);
                 Utils.updateDependentPreference(getContext(), b, pref, shouldSetEnabled);
             }
+        }
+    }
+    @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference instanceof VibratorStrengthPreference){
+            ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
+        } else {
+            super.onDisplayPreferenceDialog(preference);
         }
     }
 }

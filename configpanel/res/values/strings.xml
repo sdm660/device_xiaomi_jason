@@ -22,10 +22,27 @@
 
     <!-- Application title -->
     <string name="device_settings_app_name">Extra Settings</string>
-    <string name="summary_device_settings">Some Extra Settings</string>
+    <string name="summary_device_settings">Device specific settings</string>
 
     <!-- Button settings -->
     <string name="button_panel_title">Extra Settings</string>
     <string name="additional_buttons_title">Additional buttons</string>
+
+    <!-- Vibrator -->
+    <string name="vibrator_category">Vibrator</string>
+    <string name="vibrator_title">Strength</string>
+    <string name="vibrator_summary">Define the strength of the vibrator</string>
+
+     <!-- Kcal -->
+    <string name="kcal_title">Display color</string>
+    <string name="kcal_summary">Display color calibration using KCAL</string>
+    <string name="kcal_enabled_title">Enable KCAL</string>
+    <string name="kcal_enabled_summary">Turn on display calibration using KCAL</string>
+    <string name="kcal_red">Red</string>
+    <string name="kcal_green">Green</string>
+    <string name="kcal_blue">Blue</string>
+    <string name="kcal_saturation">Saturation</string>
+    <string name="kcal_contrast">Contrast</string>
+    <string name="menu_reset">Reset</string>
 
 </resources>

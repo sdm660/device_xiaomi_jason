@@ -67,6 +67,15 @@
                 android:resource="@string/summary_device_settings" />
         </activity>
 
+        <activity
+                android:name="org.lineageos.settings.device.DisplayCalibration"
+                android:exported="true"
+                android:label="@string/kcal_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".Startup" >
             <intent-filter android:priority="100">

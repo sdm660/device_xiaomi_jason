@@ -404,3 +404,6 @@ firmware_directories /vendor/firmware_mnt/image/
 #QG device
 /dev/qg               0660   system     system
 /dev/qg_battery       0660   system     system
+
+#Kcal
+/sys/devices/platform/kcal_ctrl.0/* 0666 system system
