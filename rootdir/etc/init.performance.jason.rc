@@ -88,3 +88,6 @@ on post-fs-data
 
     # Re-enable thermal and BCL hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
