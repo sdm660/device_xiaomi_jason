@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jason device
 $(call inherit-product, device/xiaomi/jason/device.mk)
 
-# Inherit some common PE stuff.
+# Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
@@ -49,3 +49,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "Xiaomi/jason/jason:7.1.1/NMF26X/V9.6.2.0.NCHMIFD:user/release-keys"
 
 TARGET_VENDOR := Xiaomi
+
+CUSTOM_BUILD_TYPE := OFFICIAL
