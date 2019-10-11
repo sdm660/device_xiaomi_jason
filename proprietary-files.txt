@@ -726,7 +726,7 @@ vendor/lib64/vendor.display.color@1.0.so|9209b10d4197389b6538a02edca8fe542112a7e
 vendor/lib64/vendor.display.postproc@1.0.so|04a739e2e6241dd6afe874129a7470ed050dd550
 
 # QMI
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 lib64/libdiag_system.so
 vendor/bin/irsc_util
@@ -914,11 +914,11 @@ vendor/etc/thermal-engine-sdm660-nolimits.conf
 vendor/etc/thermal-engine-sdm660.conf
 vendor/etc/thermal-engine.conf
 
-# Time services - from LA.UM.7.2.r1-06900-sdm660.0
--vendor/app/TimeService/TimeService.apk|693a68e35a2cbc40d23b291fcc836c8567f90b14
-vendor/bin/time_daemon|ac244644735005d4c4322168001dcd3ae757007f
+# Time services - from mata
+-vendor/app/TimeService/TimeService.apk|a7a9459a9dfdc9f8a20a9fd4ccd24035e04801c8
+vendor/bin/time_daemon|34cf6c5022a94d3ec23d3b5b486641337cc27c42
 vendor/etc/init/init.time_daemon.rc|edb18291351eb7efcb597d33c2c7f2d9bb7328a9
-vendor/lib64/libtime_genoff.so|9de68b1aa139b06b0e455bd1c24ed0c527492c3b
+vendor/lib64/libtime_genoff.so|0746098d7ae6c80376ceac4b4f7151cae82079b0
 
 # Wifi
 vendor/bin/cnss-daemon
