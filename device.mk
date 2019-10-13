@@ -287,7 +287,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=420
+    ro.sf.lcd_density=420 \
+    ro.qualcomm.cabl=2 \
+    vendor.display.disable_partial_split=1 \
+    sdm.perf_hint_window=50 \
+    debug.cpurend.vsync=false \
+    debug.hwui.use_buffer_age=false \
+    vendor.display.perf_hint_window=50 \
+    sdm.debug.rotator_downscale=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad=1 \
