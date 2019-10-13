@@ -205,6 +205,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.avs.afe_api_version=2 \
     vendor.audio.adm.buffering.ms=6
 
+# Vol steps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.vc_call_vol_steps=14 \
+    ro.config.media_vol_steps=25 \
+    audio.safemedia.bypass=true
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
