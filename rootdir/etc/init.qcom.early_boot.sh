@@ -31,7 +31,7 @@
 export PATH=/vendor/bin
 
 #set default lcd density
-setprop vendor.display.lcd_density 480
+setprop vendor.display.lcd_density 420
 setprop vendor.media.sdm660.version 1
 
 #enable atfwd daemon
