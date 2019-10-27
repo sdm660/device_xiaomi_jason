@@ -914,11 +914,11 @@ vendor/etc/thermal-engine-sdm660-nolimits.conf
 vendor/etc/thermal-engine-sdm660.conf
 vendor/etc/thermal-engine.conf
 
-# Time services - from mata
--vendor/app/TimeService/TimeService.apk|a7a9459a9dfdc9f8a20a9fd4ccd24035e04801c8
-vendor/bin/time_daemon|34cf6c5022a94d3ec23d3b5b486641337cc27c42
-vendor/etc/init/init.time_daemon.rc|edb18291351eb7efcb597d33c2c7f2d9bb7328a9
-vendor/lib64/libtime_genoff.so|0746098d7ae6c80376ceac4b4f7151cae82079b0
+# Time services - from raphael-user 10 QKQ1.190716.003 V10.4.6.0.QFKCNXM release-keys
+-vendor/app/TimeService/TimeService.apk|27f9b81621c446baa8c37581d9bfbca2fd67b496
+vendor/bin/time_daemon|2652ed04ebe55219b5da38db021d43b38e9227d3
+vendor/lib/libtime_genoff.so|cd8a5cc7ccc598e3c3308980c45acb804baa5986
+vendor/lib64/libtime_genoff.so|746db5267fde236de820fa7d887386f65aea7a8a
 
 # Wifi
 vendor/bin/cnss-daemon
