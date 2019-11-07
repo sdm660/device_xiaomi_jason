@@ -18,6 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Category title -->
+    <string name="graphics_title">Graphics</string>
     <string name="buttons_title">Hadware buttons</string>
 
     <!-- Application title -->
