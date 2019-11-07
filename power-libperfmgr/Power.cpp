@@ -17,6 +17,10 @@
 #define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
 #define LOG_TAG "android.hardware.power@1.3-service.pixel-libperfmgr"
 
+#ifndef TAP_TO_WAKE_NODE
+#define TAP_TO_WAKE_NODE "/sys/bus/i2c/devices/4-0020/input/input1/wake_gesture"
+#endif
+
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
@@ -213,7 +217,13 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
 }
 
 Return<void> Power::setFeature(Feature feature, bool activate)  {
-    set_feature(static_cast<feature_t>(feature), activate ? 1 : 0);
+    switch (feature) {
+        case Feature::POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+            ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE);
+            break;
+        default:
+            break;
+    }
     return Void();
 }
 
