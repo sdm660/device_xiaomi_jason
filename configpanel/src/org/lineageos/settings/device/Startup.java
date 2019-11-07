@@ -21,11 +21,10 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
-import androidx.preference.PreferenceManager;
+import android.content.pm.PackageManager;
 import android.util.Log;
-
+import androidx.preference.PreferenceManager;
 import org.lineageos.internal.util.FileUtils;
 
 public class Startup extends BroadcastReceiver {
@@ -35,7 +34,8 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        if (Intent.ACTION_BOOT_COMPLETED.equals(action) || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(action)
+                || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
             NotificationBrightnessPreference.restore(context);
@@ -61,8 +61,11 @@ public class Startup extends BroadcastReceiver {
                         value = Utils.isPreferenceEnabled(context, pref) ? "1" : "0";
                     }
                     if (!FileUtils.writeLine(node, value)) {
-                        Log.w(TAG, "Write to node " + node +
-                            " failed while restoring saved preference values");
+                        Log.w(
+                                TAG,
+                                "Write to node "
+                                        + node
+                                        + " failed while restoring saved preference values");
                     }
                 }
             }
@@ -76,7 +79,8 @@ public class Startup extends BroadcastReceiver {
     private void disableComponent(Context context, String component) {
         ComponentName name = new ComponentName(context, component);
         PackageManager pm = context.getPackageManager();
-        pm.setComponentEnabledSetting(name,
+        pm.setComponentEnabledSetting(
+                name,
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP);
     }
@@ -86,7 +90,8 @@ public class Startup extends BroadcastReceiver {
         PackageManager pm = context.getPackageManager();
         if (pm.getComponentEnabledSetting(name)
                 == PackageManager.COMPONENT_ENABLED_STATE_DISABLED) {
-            pm.setComponentEnabledSetting(name,
+            pm.setComponentEnabledSetting(
+                    name,
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
         }

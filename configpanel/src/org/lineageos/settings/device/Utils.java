@@ -19,23 +19,24 @@ package org.lineageos.settings.device;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.UserHandle;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import android.content.SharedPreferences;
-import android.os.UserHandle;
-import androidx.preference.SwitchPreference;
-import androidx.preference.PreferenceManager;
-import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Utils {
 
     /**
      * Write a string value to the specified file.
-     * @param filename      The filename
-     * @param value         The value
+     *
+     * @param filename The filename
+     * @param value The value
      */
     public static void writeValue(String filename, String value) {
         try {
@@ -68,21 +69,21 @@ public class Utils {
         return preferences.getString(key, (String) Constants.sNodeDefaultMap.get(key));
     }
 
-    public static void updateDependentPreference(Context context, SwitchPreference b,
-            String key, boolean shouldSetEnabled) {
+    public static void updateDependentPreference(
+            Context context, SwitchPreference b, String key, boolean shouldSetEnabled) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         boolean prefActualValue = preferences.getBoolean(key, false);
 
         if (shouldSetEnabled) {
-            if (Constants.sNodeUserSetValuesMap.get(key) != null &&
-                    (Boolean) Constants.sNodeUserSetValuesMap.get(key)[1] &&
-                    (Boolean) Constants.sNodeUserSetValuesMap.get(key)[1] != prefActualValue) {
+            if (Constants.sNodeUserSetValuesMap.get(key) != null
+                    && (Boolean) Constants.sNodeUserSetValuesMap.get(key)[1]
+                    && (Boolean) Constants.sNodeUserSetValuesMap.get(key)[1] != prefActualValue) {
                 b.setChecked(true);
-                Constants.sNodeUserSetValuesMap.put(key, new Boolean[]{ prefActualValue, false });
+                Constants.sNodeUserSetValuesMap.put(key, new Boolean[] {prefActualValue, false});
             }
         } else {
             if (b.isEnabled() && prefActualValue) {
-                Constants.sNodeUserSetValuesMap.put(key, new Boolean[]{ prefActualValue, true });
+                Constants.sNodeUserSetValuesMap.put(key, new Boolean[] {prefActualValue, true});
             }
             b.setEnabled(false);
             b.setChecked(false);
@@ -96,12 +97,13 @@ public class Utils {
 
     public static String getFileValue(String filename, String defValue) {
         String fileValue = readLine(filename);
-        if(fileValue!=null){
+        if (fileValue != null) {
             return fileValue;
         }
         return defValue;
     }
-     public static String readLine(String filename) {
+
+    public static String readLine(String filename) {
         if (filename == null) {
             return null;
         }

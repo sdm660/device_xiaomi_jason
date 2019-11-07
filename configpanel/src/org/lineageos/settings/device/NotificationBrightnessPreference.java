@@ -1,46 +1,44 @@
 /*
-* Copyright (C) 2016 The OmniROM Project
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 2 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * Copyright (C) 2016 The OmniROM Project
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package org.lineageos.settings.device;
 
+import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.database.ContentObserver;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.preference.DialogPreference;
 import android.support.v7.preference.Preference;
-import android.content.DialogInterface;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.app.AlertDialog;
-
 import java.util.List;
-
-import org.lineageos.settings.device.Utils;
 import org.lineageos.settings.device.R;
+import org.lineageos.settings.device.Utils;
 
-public class NotificationBrightnessPreference extends DialogPreference implements
-        SeekBar.OnSeekBarChangeListener {
+public class NotificationBrightnessPreference extends DialogPreference
+        implements SeekBar.OnSeekBarChangeListener {
 
     public static final String KEY_LED = "led_brightness";
 
@@ -59,18 +57,20 @@ public class NotificationBrightnessPreference extends DialogPreference implement
 
     public boolean onDisplayPreferenceDialog(Preference preference) {
         if (preference instanceof NotificationBrightnessPreference) {
-        	mOldBrightness = Integer.parseInt(getValue(getContext()));
-		mMinValue = 1;
-        	mMaxValue = 64;
-        	offset = mMaxValue/64f;
+            mOldBrightness = Integer.parseInt(getValue(getContext()));
+            mMinValue = 1;
+            mMaxValue = 64;
+            offset = mMaxValue / 64f;
 
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.preference_dialog_notification_led, null);            
-            mSeekBar = (SeekBar)view.findViewById(R.id.seekbar);
+            View view =
+                    LayoutInflater.from(getContext())
+                            .inflate(R.layout.preference_dialog_notification_led, null);
+            mSeekBar = (SeekBar) view.findViewById(R.id.seekbar);
             mValueText = (TextView) view.findViewById(R.id.current_value);
 
             mSeekBar.setMax(mMaxValue - mMinValue);
             mSeekBar.setProgress(mOldBrightness - mMinValue);
-            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)));            
+            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)));
             mSeekBar.setOnSeekBarChangeListener(this);
 
             new AlertDialog.Builder(getContext())
@@ -90,7 +90,6 @@ public class NotificationBrightnessPreference extends DialogPreference implement
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 restoreOldState();
-
             }
         };
     }
@@ -101,10 +100,10 @@ public class NotificationBrightnessPreference extends DialogPreference implement
             public void onClick(DialogInterface dialog, int which) {
                 final int value = mSeekBar.getProgress() + mMinValue;
                 setValue(String.valueOf(value));
-                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+                SharedPreferences.Editor editor =
+                        PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
                 editor.putString(KEY_LED, String.valueOf(value));
                 editor.commit();
-
             }
         };
     }
@@ -126,14 +125,14 @@ public class NotificationBrightnessPreference extends DialogPreference implement
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_LED, "64"); 
+        String storedValue =
+                PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_LED, "64");
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 
-    public void onProgressChanged(SeekBar seekBar, int progress,
-            boolean fromTouch) {
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromTouch) {
         setValue(String.valueOf(progress + mMinValue));
-        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)));        
+        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)));
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -141,7 +140,7 @@ public class NotificationBrightnessPreference extends DialogPreference implement
     }
 
     public void onStopTrackingTouch(SeekBar seekBar) {
-	// NA
+        // NA
     }
 
     private void restoreOldState() {

@@ -26,7 +26,8 @@ public class Constants {
     public static final String BUTTON_SWAP_KEY = "button_swap";
 
     // Nodes
-    public static final String BUTTON_SWAP_NODE = "/sys/bus/i2c/devices/4-0020/input/input1/reversed_keys";
+    public static final String BUTTON_SWAP_NODE =
+            "/sys/bus/i2c/devices/4-0020/input/input1/reversed_keys";
 
     // Intents
     public static final String CUST_INTENT = "org.lineageos.settings.device.CUST_UPDATE";
@@ -44,9 +45,7 @@ public class Constants {
     // Holds <preference_key> -> <dependency_check> mapping
     public static final Map<String, String[]> sNodeDependencyMap = new HashMap<>();
 
-    public static final String[] sButtonPrefKeys = {
-        BUTTON_SWAP_KEY
-    };
+    public static final String[] sButtonPrefKeys = {BUTTON_SWAP_KEY};
 
     static {
         sBooleanNodePreferenceMap.put(BUTTON_SWAP_KEY, BUTTON_SWAP_NODE);

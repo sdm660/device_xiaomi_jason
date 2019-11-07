@@ -20,16 +20,15 @@ package org.lineageos.settings.device;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.view.MenuItem;
-
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.SwitchPreference;
 import org.lineageos.internal.util.FileUtils;
 import org.lineageos.internal.util.PackageManagerUtils;
 
@@ -48,7 +47,8 @@ public class ButtonSettingsFragment extends PreferenceFragment
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mNotificationBrightness = (NotificationBrightnessPreference) findPreference("notification_key");
+        mNotificationBrightness =
+                (NotificationBrightnessPreference) findPreference("notification_key");
         if (mNotificationBrightness != null) {
             mNotificationBrightness.setEnabled(NotificationBrightnessPreference.isSupported());
         }
@@ -69,14 +69,15 @@ public class ButtonSettingsFragment extends PreferenceFragment
         }
 
         mKcalPref = findPreference("kcal");
-        mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-             @Override
-             public boolean onPreferenceClick(Preference preference) {
-                 Intent intent = new Intent(getActivity(), DisplayCalibration.class);
-                 startActivity(intent);
-                 return true;
-             }
-        });
+        mKcalPref.setOnPreferenceClickListener(
+                new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        Intent intent = new Intent(getActivity(), DisplayCalibration.class);
+                        startActivity(intent);
+                        return true;
+                    }
+                });
     }
 
     @Override
@@ -147,23 +148,24 @@ public class ButtonSettingsFragment extends PreferenceFragment
             String dependencyNode = Constants.sNodeDependencyMap.get(pref)[0];
             if (FileUtils.isFileReadable(dependencyNode)) {
                 String dependencyNodeValue = FileUtils.readOneLine(dependencyNode);
-                boolean shouldSetEnabled = dependencyNodeValue.equals(
-                        Constants.sNodeDependencyMap.get(pref)[1]);
+                boolean shouldSetEnabled =
+                        dependencyNodeValue.equals(Constants.sNodeDependencyMap.get(pref)[1]);
                 Utils.updateDependentPreference(getContext(), b, pref, shouldSetEnabled);
             }
         }
     }
+
     @Override
     public void onDisplayPreferenceDialog(Preference preference) {
-        if (preference instanceof VibratorStrengthPreference){
-            ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
-        } else if (preference instanceof NotificationBrightnessPreference){
-            ((NotificationBrightnessPreference)preference).onDisplayPreferenceDialog(preference);
-        } else if (preference instanceof TorchYellowBrightnessPreference){
-            ((TorchYellowBrightnessPreference)preference).onDisplayPreferenceDialog(preference);
-        } else if (preference instanceof TorchWhiteBrightnessPreference){
-            ((TorchWhiteBrightnessPreference)preference).onDisplayPreferenceDialog(preference);
-	} else {
+        if (preference instanceof VibratorStrengthPreference) {
+            ((VibratorStrengthPreference) preference).onDisplayPreferenceDialog(preference);
+        } else if (preference instanceof NotificationBrightnessPreference) {
+            ((NotificationBrightnessPreference) preference).onDisplayPreferenceDialog(preference);
+        } else if (preference instanceof TorchYellowBrightnessPreference) {
+            ((TorchYellowBrightnessPreference) preference).onDisplayPreferenceDialog(preference);
+        } else if (preference instanceof TorchWhiteBrightnessPreference) {
+            ((TorchWhiteBrightnessPreference) preference).onDisplayPreferenceDialog(preference);
+        } else {
             super.onDisplayPreferenceDialog(preference);
         }
     }

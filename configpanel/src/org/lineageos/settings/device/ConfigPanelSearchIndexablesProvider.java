@@ -17,11 +17,6 @@
 
 package org.lineageos.settings.device;
 
-import android.database.Cursor;
-import android.database.MatrixCursor;
-import android.provider.SearchIndexableResource;
-import android.provider.SearchIndexablesProvider;
-
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_CLASS_NAME;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_ICON_RESID;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_ACTION;
@@ -33,16 +28,24 @@ import static android.provider.SearchIndexablesContract.INDEXABLES_RAW_COLUMNS;
 import static android.provider.SearchIndexablesContract.INDEXABLES_XML_RES_COLUMNS;
 import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLUMNS;
 
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.provider.SearchIndexableResource;
+import android.provider.SearchIndexablesProvider;
+
 public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvider {
     private static final String TAG = "ConfigPanelSearchIndexablesProvider";
 
     public static final int SEARCH_IDX_BUTTON_PANEL = 0;
 
-    private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
-            new SearchIndexableResource(1, R.xml.button_panel,
-                    ButtonSettingsActivity.class.getName(),
-                    R.drawable.ic_settings_device_features),
-    };
+    private static SearchIndexableResource[] INDEXABLE_RES =
+            new SearchIndexableResource[] {
+                new SearchIndexableResource(
+                        1,
+                        R.xml.button_panel,
+                        ButtonSettingsActivity.class.getName(),
+                        R.drawable.ic_settings_device_features),
+            };
 
     @Override
     public boolean onCreate() {

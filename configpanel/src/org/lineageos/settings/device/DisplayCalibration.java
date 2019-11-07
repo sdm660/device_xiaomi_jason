@@ -1,42 +1,40 @@
 /*
-* Copyright (C) 2016 The OmniROM Project
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 2 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * Copyright (C) 2016 The OmniROM Project
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package org.lineageos.settings.device;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-
-import android.app.ActionBar;
-import org.lineageos.settings.device.utils.SeekBarPreference;
 import org.lineageos.settings.device.R;
+import org.lineageos.settings.device.utils.SeekBarPreference;
 
-public class DisplayCalibration extends PreferenceActivity implements
-        OnPreferenceChangeListener {
+public class DisplayCalibration extends PreferenceActivity implements OnPreferenceChangeListener {
 
     public static final String KEY_KCAL_ENABLED = "kcal_enabled";
     public static final String KEY_KCAL_RED = "kcal_red";
@@ -60,7 +58,8 @@ public class DisplayCalibration extends PreferenceActivity implements
 
     private static final String COLOR_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
     private static final String COLOR_FILE_CONTRAST = "/sys/devices/platform/kcal_ctrl.0/kcal_cont";
-    private static final String COLOR_FILE_SATURATION = "/sys/devices/platform/kcal_ctrl.0/kcal_sat";
+    private static final String COLOR_FILE_SATURATION =
+            "/sys/devices/platform/kcal_ctrl.0/kcal_sat";
     private static final String COLOR_FILE_ENABLE = "/sys/devices/platform/kcal_ctrl.0/kcal_enable";
 
     @Override
@@ -103,7 +102,6 @@ public class DisplayCalibration extends PreferenceActivity implements
         mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mKcalRed.def));
         mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mKcalGreen.def));
         mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mKcalBlue.def));
-
     }
 
     private boolean isSupported(String file) {
@@ -111,27 +109,37 @@ public class DisplayCalibration extends PreferenceActivity implements
     }
 
     public static void restore(Context context) {
-       boolean storeEnabled = PreferenceManager
-                .getDefaultSharedPreferences(context).getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, false);
-       if (storeEnabled) {
-           Utils.writeValue(COLOR_FILE_ENABLE, "1");
-           Utils.writeValue(COLOR_FILE, "1");
-           int storedRed = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_RED, 256);
-           int storedGreen = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_GREEN, 256);
-           int storedBlue = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_BLUE, 256);
-           int storedSaturation = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_SATURATION, 255);
-           int storedContrast = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_CONTRAST, 255);
-           String storedValue = ((String) String.valueOf(storedRed)
-                   + " " + String.valueOf(storedGreen) + " " +  String.valueOf(storedBlue));
-           Utils.writeValue(COLOR_FILE, storedValue);
-           Utils.writeValue(COLOR_FILE_CONTRAST, String.valueOf(storedContrast));
-           Utils.writeValue(COLOR_FILE_SATURATION, String.valueOf(storedSaturation));
-       }
+        boolean storeEnabled =
+                PreferenceManager.getDefaultSharedPreferences(context)
+                        .getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, false);
+        if (storeEnabled) {
+            Utils.writeValue(COLOR_FILE_ENABLE, "1");
+            Utils.writeValue(COLOR_FILE, "1");
+            int storedRed =
+                    PreferenceManager.getDefaultSharedPreferences(context)
+                            .getInt(DisplayCalibration.KEY_KCAL_RED, 256);
+            int storedGreen =
+                    PreferenceManager.getDefaultSharedPreferences(context)
+                            .getInt(DisplayCalibration.KEY_KCAL_GREEN, 256);
+            int storedBlue =
+                    PreferenceManager.getDefaultSharedPreferences(context)
+                            .getInt(DisplayCalibration.KEY_KCAL_BLUE, 256);
+            int storedSaturation =
+                    PreferenceManager.getDefaultSharedPreferences(context)
+                            .getInt(DisplayCalibration.KEY_KCAL_SATURATION, 255);
+            int storedContrast =
+                    PreferenceManager.getDefaultSharedPreferences(context)
+                            .getInt(DisplayCalibration.KEY_KCAL_CONTRAST, 255);
+            String storedValue =
+                    ((String) String.valueOf(storedRed)
+                            + " "
+                            + String.valueOf(storedGreen)
+                            + " "
+                            + String.valueOf(storedBlue));
+            Utils.writeValue(COLOR_FILE, storedValue);
+            Utils.writeValue(COLOR_FILE_CONTRAST, String.valueOf(storedContrast));
+            Utils.writeValue(COLOR_FILE_SATURATION, String.valueOf(storedSaturation));
+        }
     }
 
     @Override
@@ -142,7 +150,7 @@ public class DisplayCalibration extends PreferenceActivity implements
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
@@ -169,7 +177,12 @@ public class DisplayCalibration extends PreferenceActivity implements
         mPrefs.edit().putInt(KEY_KCAL_SATURATION, saturation).commit();
         mPrefs.edit().putInt(KEY_KCAL_CONTRAST, contrast).commit();
 
-        String storedValue = Integer.toString(red) + " " + Integer.toString(green) + " " +  Integer.toString(blue);
+        String storedValue =
+                Integer.toString(red)
+                        + " "
+                        + Integer.toString(green)
+                        + " "
+                        + Integer.toString(blue);
 
         Utils.writeValue(COLOR_FILE, storedValue);
         Utils.writeValue(COLOR_FILE_SATURATION, Integer.toString(saturation));
@@ -184,8 +197,12 @@ public class DisplayCalibration extends PreferenceActivity implements
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            String storedValue = ((String) String.valueOf(mRed)
-                   + " " + String.valueOf(mGreen) + " " +  String.valueOf(mBlue));
+            String storedValue =
+                    ((String) String.valueOf(mRed)
+                            + " "
+                            + String.valueOf(mGreen)
+                            + " "
+                            + String.valueOf(mBlue));
             String mSaturation = String.valueOf(mPrefs.getInt(KEY_KCAL_SATURATION, 256));
             String mContrast = String.valueOf(mPrefs.getInt(KEY_KCAL_CONTRAST, 256));
 
@@ -199,7 +216,7 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_RED, (int) val).commit();
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            String strVal = ((String) newValue + " " + mGreen + " " +mBlue);
+            String strVal = ((String) newValue + " " + mGreen + " " + mBlue);
             Utils.writeValue(COLOR_FILE, strVal);
             return true;
         } else if (preference == mKcalGreen) {
@@ -207,7 +224,7 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_GREEN, (int) val).commit();
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            String strVal = ((String) mRed + " " + newValue + " " +mBlue);
+            String strVal = ((String) mRed + " " + newValue + " " + mBlue);
             Utils.writeValue(COLOR_FILE, strVal);
             return true;
         } else if (preference == mKcalBlue) {
@@ -215,7 +232,7 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_BLUE, (int) val).commit();
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            String strVal = ((String) mRed + " " + mGreen + " " +newValue);
+            String strVal = ((String) mRed + " " + mGreen + " " + newValue);
             Utils.writeValue(COLOR_FILE, strVal);
             return true;
         } else if (preference == mKcalSaturation) {
