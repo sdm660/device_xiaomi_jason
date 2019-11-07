@@ -114,7 +114,7 @@ public class NotificationBrightnessPreference extends DialogPreference implement
     }
 
     public static String getValue(Context context) {
-        return Utils.getFileValue(FILE_LEVEL, "100");
+        return Utils.getFileValue(FILE_LEVEL, "64");
     }
 
     private void setValue(String newValue) {
@@ -126,7 +126,7 @@ public class NotificationBrightnessPreference extends DialogPreference implement
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_LED, "100"); 
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_LED, "64"); 
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 

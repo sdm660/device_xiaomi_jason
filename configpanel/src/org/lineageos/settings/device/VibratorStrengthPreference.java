@@ -66,7 +66,7 @@ public class VibratorStrengthPreference extends DialogPreference implements
     public boolean onDisplayPreferenceDialog(Preference preference) {
         if (preference instanceof VibratorStrengthPreference) {
         	mOldStrength = Integer.parseInt(getValue(getContext()));
-        	mMaxValue = Integer.parseInt(Utils.getFileValue(FILE_MAX, "100"));
+        	mMaxValue = Integer.parseInt(Utils.getFileValue(FILE_MAX, "3596"));
 		mMinValue = (mMaxValue/100)*minPercentage;
         	offset = mMaxValue/100f;
 
@@ -122,7 +122,7 @@ public class VibratorStrengthPreference extends DialogPreference implements
     }
 
     public static String getValue(Context context) {
-        return Utils.getFileValue(FILE_LEVEL, "100");
+        return Utils.getFileValue(FILE_LEVEL, "3200");
     }
 
     private void setValue(String newValue) {
@@ -134,7 +134,7 @@ public class VibratorStrengthPreference extends DialogPreference implements
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_VIBSTRENGTH, "100"); 
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_VIBSTRENGTH, "3200"); 
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 
