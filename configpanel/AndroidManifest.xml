@@ -69,6 +69,7 @@
 
         <activity
                 android:name="org.lineageos.settings.device.DisplayCalibration"
+		android:theme="@style/PreferencesStyle"
                 android:exported="true"
                 android:label="@string/kcal_title" >
             <intent-filter>
