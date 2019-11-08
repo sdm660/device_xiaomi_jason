@@ -70,7 +70,10 @@ public class NotificationBrightnessPreference extends DialogPreference
 
             mSeekBar.setMax(mMaxValue - mMinValue);
             mSeekBar.setProgress(mOldBrightness - mMinValue);
-            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)));
+            if (mOldBrightness == 1)
+            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)) + " " + getContext().getString(R.string.notification_unit));
+            else
+            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)) + " " + getContext().getString(R.string.notification_units));
             mSeekBar.setOnSeekBarChangeListener(this);
 
             new AlertDialog.Builder(getContext())
@@ -132,7 +135,10 @@ public class NotificationBrightnessPreference extends DialogPreference
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromTouch) {
         setValue(String.valueOf(progress + mMinValue));
-        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)));
+        if (progress + mMinValue == 1)
+        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)) + " " + getContext().getString(R.string.notification_unit));
+        else
+        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)) + " " + getContext().getString(R.string.notification_units));
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {

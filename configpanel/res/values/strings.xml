@@ -50,6 +50,8 @@
     <string name="notification_category">Notification LED</string>
     <string name="notification_title">Brightness</string>
     <string name="notification_summary">Define the brightness of the LED</string>
+    <string name="notification_unit">unit</string>
+    <string name="notification_units">units</string>
 
     <!-- Torch LED -->
     <string name="torch_category">Camera LED</string>

@@ -71,7 +71,7 @@ public class TorchWhiteBrightnessPreference extends DialogPreference
 
             mSeekBar.setMax(mMaxValue - mMinValue);
             mSeekBar.setProgress(mOldBrightness - mMinValue);
-            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)));
+            mValueText.setText(Integer.toString(Math.round(mOldBrightness / offset)) + "%");
             mSeekBar.setOnSeekBarChangeListener(this);
 
             new AlertDialog.Builder(getContext())
@@ -134,7 +134,7 @@ public class TorchWhiteBrightnessPreference extends DialogPreference
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromTouch) {
         setValue(String.valueOf(progress + mMinValue));
-        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)));
+        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)) + "%");
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
