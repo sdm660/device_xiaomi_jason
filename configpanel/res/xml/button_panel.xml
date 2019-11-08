@@ -21,6 +21,8 @@
         android:title="@string/buttons_title">
     <SwitchPreference
         android:key="button_swap"
+        android:iconSpaceReserved="true"
+        android:icon="@drawable/buttons"
         android:title="@string/button_swap_title"
         android:summary="@string/button_swap_summary" />
     </PreferenceCategory>
@@ -29,11 +31,13 @@
         <org.lineageos.settings.device.TorchYellowBrightnessPreference
             android:key="torch_yellow_key"
             android:iconSpaceReserved="true"
+            android:icon="@drawable/torch"
             android:title="@string/torch_yellow_title"
             android:summary="@string/torch_yellow_summary" />
         <org.lineageos.settings.device.TorchWhiteBrightnessPreference
             android:key="torch_white_key"
             android:iconSpaceReserved="true"
+            android:icon="@drawable/torch"
             android:title="@string/torch_white_title"
             android:summary="@string/torch_white_summary" />
     </PreferenceCategory>
@@ -43,6 +47,7 @@
         <org.lineageos.settings.device.NotificationBrightnessPreference
             android:key="notification_key"
             android:iconSpaceReserved="true"
+            android:icon="@drawable/notifled"
             android:title="@string/notification_title"
             android:summary="@string/notification_summary" />
     </PreferenceCategory>
@@ -53,6 +58,7 @@
             android:key="vibrator_key"
             android:title="@string/vibrator_title"
             android:iconSpaceReserved="true"
+            android:icon="@drawable/vibrator"
             android:summary="@string/vibrator_summary" />
     </PreferenceCategory>
 
@@ -62,6 +68,7 @@
             android:key="kcal"
             android:fragment="org.lineageos.settings.device.DisplayCalibration"
             android:iconSpaceReserved="true"
+            android:icon="@drawable/displaykcal"
             android:summary="@string/kcal_summary"
             android:title="@string/kcal_title" />
      </PreferenceCategory>
