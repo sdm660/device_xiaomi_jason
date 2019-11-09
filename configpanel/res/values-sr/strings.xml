@@ -28,6 +28,8 @@
     <!-- Button settings -->
     <string name="button_panel_title">Додатна Подешавања</string>
     <string name="additional_buttons_title">Додатне типке</string>
+    <string name="button_swap_title">Замени дугмад</string>
+    <string name="button_swap_summary">Замени редослед за скоро и назад</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Вибрација</string>

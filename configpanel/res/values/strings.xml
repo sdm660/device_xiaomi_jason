@@ -28,6 +28,8 @@
     <!-- Button settings -->
     <string name="button_panel_title">Extra Settings</string>
     <string name="additional_buttons_title">Additional buttons</string>
+    <string name="button_swap_title">Swap buttons</string>
+    <string name="button_swap_summary">Swap the order of recents and back buttons</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Vibrator</string>

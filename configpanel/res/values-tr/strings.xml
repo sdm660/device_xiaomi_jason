@@ -28,6 +28,8 @@
     <!-- Button settings -->
     <string name="button_panel_title">Ekstra Ayarlar</string>
     <string name="additional_buttons_title">Ek Düğmeler</string>
+    <string name="button_swap_title">Düğmeleri değiştir</string>
+    <string name="button_swap_summary">Son uygulamalar ve geri düğmesinin sırasını değiştir</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Titreşim</string>

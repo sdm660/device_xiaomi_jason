@@ -28,6 +28,8 @@
     <!-- Button settings -->
     <string name="button_panel_title">Dodatna Podešavanja</string>
     <string name="additional_buttons_title">Dodatne tipke</string>
+    <string name="button_swap_title">Zameni dugmad</string>
+    <string name="button_swap_summary">Zameni redosled za skoro i nazad</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Vibracija</string>

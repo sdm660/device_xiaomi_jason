@@ -28,6 +28,8 @@
     <!-- Button settings -->
     <string name="button_panel_title">Pengaturan tambahan</string>
     <string name="additional_buttons_title">Tombol tambahan</string>
+    <string name="button_swap_title">Tombol tukar</string>
+    <string name="button_swap_summary">Tukar urutan tombol terbaru dan kembali</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Getaran</string>
