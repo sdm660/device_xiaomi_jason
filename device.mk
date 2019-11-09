@@ -544,7 +544,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/xiaomi/jason
+    device/xiaomi/jason \
+    hardware/google/pixel
 
 # Telephony
 PRODUCT_PACKAGES += \
