@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
      Copyright (C) 2013-2016 The CyanogenMod Project
                (C) 2017 The LineageOS Project
@@ -19,44 +18,47 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Category title -->
-    <string name="graphics_title">Grafikler</string>
-    <string name="buttons_title">Donanımsal Tuşlar</string>
+    <string name="graphics_title">Ekran</string>
+    <string name="buttons_title">Donanım Tuşları</string>
 
     <!-- Application title -->
-    <string name="device_settings_app_name">Cihaz Özellikleri</string>
-    <string name="summary_device_settings">Cihazınız için Özellikler</string>
+    <string name="device_settings_app_name">Ekstra Ayarlar</string>
+    <string name="summary_device_settings">Cihaza özgü ayarlar</string>
 
     <!-- Button settings -->
-    <string name="button_panel_title">Cihaz Özellikleri</string>
-    <string name="additional_buttons_title">Ek Tuşlar</string>
+    <string name="button_panel_title">Ekstra Ayarlar</string>
+    <string name="additional_buttons_title">Ek Düğmeler</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Titreşim</string>
     <string name="vibrator_title">Kuvvet</string>
-    <string name="vibrator_summary">Titreşim Kuvvetini ayarla</string>
+    <string name="vibrator_summary">Titreşimin kuvvetini ayarlayın</string>
 
      <!-- Kcal -->
-    <string name="kcal_title">Ekran Rengi</string>
-    <string name="kcal_summary">KCAL kullanarak Ekranın Rengini ayarla</string>
-    <string name="kcal_enabled_title">"KCAL'ı aktive et"</string>
-    <string name="kcal_enabled_summary">KCAL kullaranak Ekran Kalibrasyonunu aktive et</string>
+    <string name="kcal_title">Ekran rengi</string>
+    <string name="kcal_summary">KCAL kullanarak renk kalibrasyonunu görüntüleme</string>
+    <string name="kcal_enabled_title">KCAL\'yi etkinleştir</string>
+    <string name="kcal_enabled_summary">KCAL kullanarak ekran kalibrasyonunu açın</string>
     <string name="kcal_red">Kırmızı</string>
     <string name="kcal_green">Yeşil</string>
     <string name="kcal_blue">Mavi</string>
-    <string name="kcal_saturation">Canlılık</string>
+    <string name="kcal_saturation">Doygunluk</string>
     <string name="kcal_contrast">Kontrast</string>
     <string name="menu_reset">Sıfırla</string>
 
     <!-- Notification LED -->
-    <string name="notification_category">Bildirim Işığı</string>
+    <string name="notification_category">Bildirim LED\'i</string>
     <string name="notification_title">Parlaklık</string>
-    <string name="notification_summary">Işığın Parlaklığını ayarla</string>
+    <string name="notification_summary">LED\'in parlaklığını ayarlayın</string>
+    <string name="notification_unit">birim</string>
+    <string name="notification_units">birim</string>
 
     <!-- Torch LED -->
-    <string name="torch_category">El Feneri</string>
-    <string name="torch_yellow_title">Sarı Işık Parlaklığı</string>
-    <string name="torch_yellow_summary">El Fenerinin Sarı Işık Parlaklığını ayarla</string>
-    <string name="torch_white_title">Beyaz Işık Parlaklığı</string>
-    <string name="torch_white_summary">El Fenerinin Beyaz Işık Parlaklığını ayarla</string>
+    <string name="torch_category">Kamera LED\'i</string>
+    <string name="torch_yellow_title">Sarı parlaklık</string>
+    <string name="torch_yellow_summary">Sarı LED\'in parlaklığını ayarlayın</string>
+    <string name="torch_white_title">Beyaz parlaklık</string>
+    <string name="torch_white_summary">Beyaz LED\'in parlaklığını ayarlayın</string>
+
 
 </resources>

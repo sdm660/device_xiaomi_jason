@@ -19,7 +19,7 @@
 
     <!-- Category title -->
     <string name="graphics_title">Graphics</string>
-    <string name="buttons_title">Hadware buttons</string>
+    <string name="buttons_title">Hardware buttons</string>
 
     <!-- Application title -->
     <string name="device_settings_app_name">Extra Settings</string>

@@ -18,44 +18,47 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Category title -->
-    <string name="graphics_title">Grafica</string>
-    <string name="buttons_title">Pulsanti fisici</string>
+    <string name="graphics_title">Grafiche</string>
+    <string name="buttons_title">Pulsanti Hardware</string>
 
     <!-- Application title -->
-    <string name="device_settings_app_name">Pulsanti aggiuntivi</string>
-    <string name="summary_device_settings">Funzioni specifiche per il tuo dispositivo</string>
+    <string name="device_settings_app_name">Impostazioni Aggiuntive</string>
+    <string name="summary_device_settings">Impostazioni specifiche del dispositivo</string>
 
     <!-- Button settings -->
-    <string name="button_panel_title">Pulsanti aggiuntivi</string>
-    <string name="additional_buttons_title">Pulsanti aggiuntivi</string>
+    <string name="button_panel_title">Impostazioni Aggiuntive</string>
+    <string name="additional_buttons_title">Pulsanti Aggiuntivi</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Vibrazione</string>
     <string name="vibrator_title">Intensità</string>
-    <string name="vibrator_summary">"Imposta l'intensità della vibrazione"</string>
+    <string name="vibrator_summary">Imposta l\'intensità della vibrazione</string>
 
      <!-- Kcal -->
-    <string name="kcal_title">Colori display</string>
-    <string name="kcal_summary">Calibrazione dei colori display tramite KCAL</string>
-    <string name="kcal_enabled_title">Attiva KCAL</string>
-    <string name="kcal_enabled_summary">Attiva la calibrazione del display tramite KCAL</string>
+    <string name="kcal_title">Colori Display</string>
+    <string name="kcal_summary">Calibrazione colori del display tramite KCAL</string>
+    <string name="kcal_enabled_title">Abilita KCAL</string>
+    <string name="kcal_enabled_summary">Abilita la calibrazione del display tramite KCAL</string>
     <string name="kcal_red">Rosso</string>
     <string name="kcal_green">Verde</string>
     <string name="kcal_blue">Blu</string>
     <string name="kcal_saturation">Saturazione</string>
     <string name="kcal_contrast">Contrasto</string>
-    <string name="menu_reset">Ripristina</string>
+    <string name="menu_reset">Reimposta</string>
 
     <!-- Notification LED -->
     <string name="notification_category">LED di notifica</string>
     <string name="notification_title">Luminosità</string>
     <string name="notification_summary">Imposta la luminosità del LED</string>
+    <string name="notification_unit">unità</string>
+    <string name="notification_units">unità</string>
 
     <!-- Torch LED -->
-    <string name="torch_category">LED della fotocamera</string>
-    <string name="torch_yellow_title">Luminosità gialla</string>
+    <string name="torch_category">LED Fotocamera</string>
+    <string name="torch_yellow_title">Luminosità LED giallo</string>
     <string name="torch_yellow_summary">Imposta la luminosità del LED giallo</string>
-    <string name="torch_white_title">Luminosità bianca</string>
+    <string name="torch_white_title">Luminosità LED bianco</string>
     <string name="torch_white_summary">Imposta la luminosità del LED bianco</string>
+
 
 </resources>
