@@ -2,13 +2,10 @@
 <!--
      Copyright (C) 2013-2016 The CyanogenMod Project
                (C) 2017 The LineageOS Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,19 +25,19 @@
     <!-- Button settings -->
     <string name="button_panel_title">Pengaturan tambahan</string>
     <string name="additional_buttons_title">Tombol tambahan</string>
-    <string name="button_swap_title">Tombol tukar</string>
+    <string name="button_swap_title">Tukar tombol</string>
     <string name="button_swap_summary">Tukar urutan tombol terbaru dan kembali</string>
 
     <!-- Vibrator -->
     <string name="vibrator_category">Getaran</string>
     <string name="vibrator_title">Kekuatan</string>
-    <string name="vibrator_summary">Menentukan kekuatan getaran</string>
+    <string name="vibrator_summary">Tentukan kekuatan getaran</string>
 
      <!-- Kcal -->
     <string name="kcal_title">Warna tampilan</string>
     <string name="kcal_summary">Kalibrasi warna tampilan menggunakan KCAL</string>
     <string name="kcal_enabled_title">Aktifkan KCAL</string>
-    <string name="kcal_enabled_summary">Mengaktifkan kalibrasi tampilan menggunakan KCAL</string>
+    <string name="kcal_enabled_summary">Aktifkan kalibrasi tampilan menggunakan KCAL</string>
     <string name="kcal_red">Merah</string>
     <string name="kcal_green">Hijau</string>
     <string name="kcal_blue">Biru</string>
@@ -51,16 +48,16 @@
     <!-- Notification LED -->
     <string name="notification_category">LED Notifikasi</string>
     <string name="notification_title">Kecerahan</string>
-    <string name="notification_summary">Menentukan kecerahan LED</string>
+    <string name="notification_summary">Tentukan kecerahan LED</string>
     <string name="notification_unit">Satuan</string>
     <string name="notification_units">Satuan</string>
 
     <!-- Torch LED -->
-    <string name="torch_category">LED Kamera</string>
+    <string name="torch_category">Flash kamera</string>
     <string name="torch_yellow_title">Kecerahan kuning</string>
-    <string name="torch_yellow_summary">Menentukan kecerahan LED kuning</string>
+    <string name="torch_yellow_summary">Tentukan kecerahan flash kuning</string>
     <string name="torch_white_title">Kecerahan Putih</string>
-    <string name="torch_white_summary">Menentukan kecerahan LED putih</string>
+    <string name="torch_white_summary">Tentukan kecerahan flash putih</string>
 
 
 </resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2016 The CyanogenMod Project
+               (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Category title -->
+    <string name="graphics_title">화면</string>
+    <string name="buttons_title">하드웨어 버튼</string>
+
+    <!-- Application title -->
+    <string name="device_settings_app_name">추가 설정</string>
+    <string name="summary_device_settings">기기 특화 설정</string>
+
+    <!-- Button settings -->
+    <string name="button_panel_title">추가 설정</string>
+    <string name="additional_buttons_title">추가 버튼</string>
+    <string name="button_swap_title">탐색버튼 바꾸기</string>
+    <string name="button_swap_summary">최근 앱 버튼과 뒤로가기 버튼의 순서를 바꿉니다.</string>
+
+    <!-- Vibrator -->
+    <string name="vibrator_category">진동</string>
+    <string name="vibrator_title">강도</string>
+    <string name="vibrator_summary">진동 세기를 설정합니다.</string>
+
+     <!-- Kcal -->
+    <string name="kcal_title">화면 색상</string>
+    <string name="kcal_summary">KCAL을 이용해 화면 색상을 조절합니다.</string>
+    <string name="kcal_enabled_title">KCAL 활성화</string>
+    <string name="kcal_enabled_summary">KCAL을 이용한 화면 색상 조정 기능을 활성화 합니다.</string>
+    <string name="kcal_red">빨강</string>
+    <string name="kcal_green">초록</string>
+    <string name="kcal_blue">파랑</string>
+    <string name="kcal_saturation">채도</string>
+    <string name="kcal_contrast">대비</string>
+    <string name="menu_reset">초기설정</string>
+
+    <!-- Notification LED -->
+    <string name="notification_category">알림 LED</string>
+    <string name="notification_title">밝기</string>
+    <string name="notification_summary">LED 밝기를 조절합니다.</string>
+    <string name="notification_unit">단위</string>
+    <string name="notification_units">단위</string>
+
+    <!-- Torch LED -->
+    <string name="torch_category">카메라 LED</string>
+    <string name="torch_yellow_title">노란색 조명 밝기</string>
+    <string name="torch_yellow_summary">노란색 LED의 밝기를 조절합니다.</string>
+    <string name="torch_white_title">하얀색 조명 밝기</string>
+    <string name="torch_white_summary">하얀색 LED의 밝기를 조절합니다.</string>
+
+
+</resources>
