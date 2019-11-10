@@ -681,9 +681,16 @@ vendor/bin/nqnfcinfo|cab8da1ddfa0fb10210f28127de4e5da6c423b69
 # NFC firmware
 vendor/lib/libpn553_fw.so
 
+# IRQ balance
+vendor/bin/msm_irqbalance|117d7c8a8f6f12b3615ec8ab676231df93d277f1
+
 # Perf
 vendor/lib/libqti-perfd-client.so|16816cfdc873a2fdc9467db52bd5f2aaa33d2b50
 vendor/lib64/libqti-perfd-client.so|93c3f90f1b72a21ca325cbb375923b1deba80467
+
+# Misc
+vendor/lib/libperfgluelayer.so|a88084be00012bbe9a323fe2823eee250c55a0bb
+vendor/lib64/libperfgluelayer.so|f97bc3383e3bdc39738b7c1f85805771dbfb6c97
 
 # Peripheral manager
 vendor/bin/pm-proxy
