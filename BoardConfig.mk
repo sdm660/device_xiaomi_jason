@@ -225,10 +225,6 @@ TARGET_USES_MKE2FS := true
 
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-TARGET_USES_INTERACTION_BOOST := true
-
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 
