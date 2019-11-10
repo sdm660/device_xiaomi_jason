@@ -41,6 +41,7 @@ public class SeekBarPreference extends Preference {
     public int maximum = 256;
     public int def = 256;
     public int interval = 1;
+    public int maxLength = 3;
 
     final int UPDATE = 0;
 
@@ -70,7 +71,10 @@ public class SeekBarPreference extends Preference {
         final EditText monitorBox = (EditText) layout.findViewById(R.id.monitor_box);
         final SeekBar bar = (SeekBar) layout.findViewById(R.id.seek_bar);
 
-        monitorBox.setInputType(InputType.TYPE_CLASS_NUMBER);
+        monitorBox.setInputType(InputType.TYPE_CLASS_PHONE);
+	monitorBox.setRawInputType(InputType.TYPE_CLASS_PHONE);
+	monitorBox.setImeActionLabel("DONE", EditorInfo.IME_ACTION_DONE);
+	monitorBox.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         bar.setMax(maximum - minimum);
         bar.setProgress(currentValue - minimum);
@@ -83,7 +87,7 @@ public class SeekBarPreference extends Preference {
                         if (hasFocus) monitorBox.setSelection(monitorBox.getText().length());
                     }
                 });
-        monitorBox.setFilters(new InputFilter[] {new InputFilterMinMax(minimum, maximum)});
+        monitorBox.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
         monitorBox.setOnEditorActionListener(
                 new TextView.OnEditorActionListener() {
                     @Override
@@ -95,10 +99,19 @@ public class SeekBarPreference extends Preference {
                                             getContext()
                                                     .getSystemService(Context.INPUT_METHOD_SERVICE);
                             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                            try {
                             currentValue = Integer.parseInt(v.getText().toString());
+                            if (currentValue > maximum)
+                                currentValue = maximum;
+                            if (currentValue < minimum)
+                                currentValue = minimum;
+                            } catch (NumberFormatException e) {
+                            currentValue = def;
+                            }
                             bar.setProgress(currentValue - minimum, true);
                             changer.onPreferenceChange(
                                     SeekBarPreference.this, Integer.toString(currentValue));
+                            notifyChanged();
                             return true;
                         }
                         return false;

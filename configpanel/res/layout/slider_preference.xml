@@ -39,14 +39,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@android:id/summary" >
         <EditText
+	    android:digits="1234567890"
             android:id="@+id/monitor_box"
             android:layout_width="36dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:gravity="end"
-            android:imeOptions="actionDone"
-            android:singleLine="true"
             android:background="@android:color/transparent"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
         <SeekBar
