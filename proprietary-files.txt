@@ -700,13 +700,13 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
-# Power-off alarm - from LA.UM.7.2.r1-06900-sdm660.0
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk|de40207cdeab8720307e875e95181f32066e36fd
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|1707a55275c943204574d84d639b4cd9ede15553
-vendor/bin/power_off_alarm|f973dabbdba85ece5115d4beb457cb37887e4358
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|7d163c35a9deee2801070ed50c6625709c3e0b65
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|5cf1631eafbf4421d3d022c359151ee9c1cdffc3
+# Power-off alarm
+-vendor/app/PowerOffAlarm/PowerOffAlarm.apk
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/bin/power_off_alarm
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Power-off charging daemon
 -sbin/charger:sbin/chargeonlymode;rootfs|97c58ee34cd3b7aef90d6b0988837d84734a933d
