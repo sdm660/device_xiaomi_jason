@@ -23,6 +23,7 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=sdm660 \
     sys.usb.controller=a800000.dwc3 \
     sys.usb.rndis.func.name=rndis_bam \
     sys.usb.rmnet.func.name=rmnet_bam
